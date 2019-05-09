@@ -1,5 +1,5 @@
 #!/bin/bash
-#   wp-bkp.sh - Respaldo de WordPress
+#   wp-bkp.sh - Respaldo completo WordPress
 #
 #   Copyright © 2019, Rodrigo Ernesto Alvarez Aguilera <incognia@gmail.com>
 #
@@ -42,25 +42,28 @@ elif  [[ $1 = "-v" ]]; then
 elif  [[ $1 = "-d" ]]; then
     echo -e $DATE
 else
-    # Matar procesos usando NFS
+    # Matar procesos usando directorio NFS
     fuser -k -9 /var/www/html/archivos/
-    # Desmontar NFS
+    # Desmontar directorio NFS
     umount /var/www/html/archivos/
     df -h
     sleep 5
     # Respaldar y comprimir directorio "html"
     tar -czvf $DATE-html.tar.gz /var/www/html/
-    # Respaldar la base de datos
-    mysqldump -u root -p[dabase password] wordpress > wordpress.sql
+    # Respaldar base de datos
+    mysqldump -u [database user] -p[dabase password] wordpress > wordpress.sql
     # Comprimir respaldo de base de datos
     tar -czvf $DATE-wordpress.tar.gz wordpress.sql
     # Eliminar respaldo de base de datos
     rm wordpress.sql
-    # Montar NFS
-    mount -t nfs 10.142.0.7:/data/archivos /var/www/html/archivos/
+    # Montar directorio NFS
+    mount -t nfs [server]:/data/archivos /var/www/html/archivos/
     df -h
     sleep 5
     reset
+    # Listar archivos
     ls -l
-    echo -e "Respaldo finalizado" 
+    echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
+    echo -e "│        Respaldo de directorios y base de datos de WordPress finalizado       │"
+    echo -e "└──────────────────────────────────────────────────────────────────────────────┘" 
 fi
