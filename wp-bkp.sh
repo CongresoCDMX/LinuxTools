@@ -62,8 +62,11 @@ else
     sleep 5
     reset
     # Listar archivos
-    ls -l *.gz
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
     echo -e "│        Respaldo de directorios y base de datos de WordPress finalizado       │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘" 
+    ls -l *.gz    
+    echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
+    echo -e "│  Copyright (C) 2019 - Congreso de la Ciudad de Mexico - Derechos reservados  │"
+    echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
 fi
