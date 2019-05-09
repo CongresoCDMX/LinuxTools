@@ -36,7 +36,7 @@ DATE=`date +%Y%m%d`
 if  [[ $1 = "-h" ]]; then
     echo -e $HELP
 elif  [[ $1 = "-l" ]]; then
-    more COPYING
+    more LICENSE
 elif  [[ $1 = "-v" ]]; then
     echo -e $VERSION
 elif  [[ $1 = "-d" ]]; then
