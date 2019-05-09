@@ -62,7 +62,7 @@ else
     sleep 5
     reset
     # Listar archivos
-    ls -l
+    ls -l *.gz
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
     echo -e "│        Respaldo de directorios y base de datos de WordPress finalizado       │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘" 
