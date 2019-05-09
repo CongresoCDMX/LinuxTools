@@ -67,6 +67,6 @@ else
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘" 
     ls -l *.gz    
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
-    echo -e "│  Copyright (C) 2019 - Congreso de la Ciudad de Mexico - Derechos reservados  │"
+    echo -e "│              Copyright (C) 2019 Rodrigo Ernesto Alvarez Aguilera             │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
 fi
