@@ -19,7 +19,7 @@
 #   Version 0.1 - May 9, 2019
 #   Author: Rodrigo Ernesto Alvarez Aguilera
 #
-#   Tested under Ubuntu 16.04.6 LTS using GNU bash version 4.3.48
+#   Tested under Debian GNU/Linux 9.7 (stretch) using GNU bash version 4.4.12
 #
 
 HELP="Uso: wp-bkp.sh [OPCIÓN]\n\n
