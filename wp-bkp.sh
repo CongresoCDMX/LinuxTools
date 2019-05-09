@@ -1,5 +1,5 @@
 #!/bin/bash
-#   wp-bkp.sh - Respaldo completo WordPress
+#   wp-bkp.sh - Respaldo del sistema de gestion de contenidos WordPress
 #
 #   Copyright © 2019, Rodrigo Ernesto Alvarez Aguilera <incognia@gmail.com>
 #
@@ -67,6 +67,6 @@ else
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘" 
     ls -l *.gz    
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
-    echo -e "│              Copyright (C) 2019 Rodrigo Ernesto Alvarez Aguilera             │"
+    echo -e "│               Copyright © 2019 Rodrigo Ernesto Alvarez Aguilera              │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
 fi
