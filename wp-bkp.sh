@@ -29,7 +29,7 @@ HELP="Uso: wp-bkp.sh [OPCIÓN]\n\n
 \t-v\tmuestra la versión del programa\n"
 
 VERSION="wp-bkp.sh versión 0.1\n
-\bCopyright © 2019 Rodrigo Ernesto Alvarez Aguilera"
+\bCopyright © 2019, Rodrigo Ernesto Alvarez Aguilera"
 
 DATE=`date +%Y%m%d`
 
@@ -67,6 +67,6 @@ else
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘" 
     ls -l *.gz    
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
-    echo -e "│               Copyright © 2019 Rodrigo Ernesto Alvarez Aguilera              │"
+    echo -e "│              Copyright © 2019, Rodrigo Ernesto Alvarez Aguilera              │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
 fi
