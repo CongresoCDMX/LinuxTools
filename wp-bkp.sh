@@ -16,22 +16,31 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#   Version 0.1 - May 9, 2019
+#   Version 0.2 - May 13, 2019
 #   Author: Rodrigo Ernesto Alvarez Aguilera
 #
 #   Tested under Debian GNU/Linux 9.7 using GNU bash version 4.4.12
 #
 
 HELP="Uso: wp-bkp.sh [OPCIÓN]\n\n
-\t-d\tmuestra la fecha actual\n
 \t-h\tmuestra esta lista de ayuda\n
 \t-l\tmuestra la licencia del programa\n
 \t-v\tmuestra la versión del programa\n"
 
-VERSION="wp-bkp.sh versión 0.1\n
+VERSION="wp-bkp.sh versión 0.2\n
 \bCopyright © 2019, Rodrigo Ernesto Alvarez Aguilera"
 
 DATE=`date +%Y%m%d`
+
+NFS=[nfs server]
+
+HOST=`hostname`
+
+DATABASE="wordpress"
+
+DBUSER=[database user]
+
+DBPASS=[dabase password]
 
 if  [[ $1 = "-h" ]]; then
     echo -e $HELP
@@ -39,8 +48,6 @@ elif  [[ $1 = "-l" ]]; then
     more LICENSE
 elif  [[ $1 = "-v" ]]; then
     echo -e $VERSION
-elif  [[ $1 = "-d" ]]; then
-    echo -e $DATE
 else
     # Matar procesos usando directorio NFS
     fuser -k -9 /var/www/html/archivos/
@@ -51,13 +58,13 @@ else
     # Respaldar y comprimir directorio "html"
     tar -czvf $DATE-html.tar.gz /var/www/html/
     # Respaldar base de datos
-    mysqldump -u [database user] -p[dabase password] wordpress > wordpress.sql
+    mysqldump -u $DBUSER -p$DBPASS $DATABASE > $DATABASE.sql
     # Comprimir respaldo de base de datos
     tar -czvf $DATE-wordpress.tar.gz wordpress.sql
     # Eliminar respaldo de base de datos
     rm wordpress.sql
     # Montar directorio NFS
-    mount -t nfs [server]:/data/archivos /var/www/html/archivos/
+    mount -t nfs $NFS:/data/archivos /var/www/html/archivos/
     df -h
     sleep 5
     reset
