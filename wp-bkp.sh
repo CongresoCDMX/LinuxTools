@@ -56,24 +56,32 @@ else
     df -h
     sleep 5
     # Respaldar y comprimir directorio "html"
-    tar -czvf $DATE-html.tar.gz /var/www/html/
+    tar -czvf $DATE-$HOST-html.tar.gz /var/www/html/
     # Respaldar base de datos
     mysqldump -u $DBUSER -p$DBPASS $DATABASE > $DATABASE.sql
     # Comprimir respaldo de base de datos
-    tar -czvf $DATE-wordpress.tar.gz wordpress.sql
+    tar -czvf $DATE-$HOST-wordpress.tar.gz wordpress.sql
     # Eliminar respaldo de base de datos
     rm wordpress.sql
     # Montar directorio NFS
     mount -t nfs $NFS:/data/archivos /var/www/html/archivos/
-    df -h
-    sleep 5
+    echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
+    echo -e "│                            Generando informe...                              │"
+    echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
+    # Generar suma MD5
+    md5sum $DATE-*.gz > md5.tmp
     reset
     # Listar archivos
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
     echo -e "│        Respaldo de directorios y base de datos de WordPress finalizado       │"
-    echo -e "└──────────────────────────────────────────────────────────────────────────────┘" 
-    ls -l *.gz    
+    echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
+    df -h |grep -e File -e archivos
+    echo -e " ────────────────────────────────────────────────────────────────────────────── "
+    ls -hl $DATE-*.gz
+    echo -e " ────────────────────────────────────────────────────────────────────────────── "
+    cat md5.tmp
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
     echo -e "│              Copyright © 2019, Rodrigo Ernesto Alvarez Aguilera              │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
+    rm md5.tmp
 fi
