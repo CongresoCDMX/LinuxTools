@@ -30,17 +30,17 @@ HELP="Uso: wp-bkp.sh [OPCIÓN]\n\n
 VERSION="wp-bkp.sh versión 0.2\n
 \bCopyright © 2019, Rodrigo Ernesto Alvarez Aguilera"
 
-DATE=`date +%Y%m%d`
-
-NFS=[nfs server]
-
-HOST=`hostname`
-
 DATABASE="wordpress"
 
 DBUSER=[database user]
 
 DBPASS=[dabase password]
+
+DATE=`date +%Y%m%d`
+
+HOST=`hostname`
+
+NFS=[nfs server]
 
 if  [[ $1 = "-h" ]]; then
     echo -e $HELP
@@ -56,7 +56,7 @@ else
     df -h
     sleep 5
     # Respaldar y comprimir directorio "html"
-    tar -czvf $DATE-$HOST-html.tar.gz /var/www/html/
+    tar -czvf $DATE-$HOST-html.tar.gz /var/www/html/Comisión de Inclusión, Bienestar Social y Exigibilidad de Derechos Sociales
     # Respaldar base de datos
     mysqldump -u $DBUSER -p$DBPASS $DATABASE > $DATABASE.sql
     # Comprimir respaldo de base de datos
