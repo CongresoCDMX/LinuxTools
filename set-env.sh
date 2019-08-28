@@ -36,11 +36,7 @@ elif  [[ $1 = "-l" ]]; then
     more LICENSE
 elif  [[ $1 = "-v" ]]; then
     echo -e $VERSION
-else
-    # Put the system up to date
-    sudo apt-get update
-    sudo apt-get install aptitude
-    sudo aptitude safe-upgrade --assume-yes
+elif  [[ $1 = "-R" ]]; then
     # Add key and repository for R
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
     sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/'
@@ -54,5 +50,16 @@ else
     # Reset terminal and display final message
     sleep 5
     reset
-    echo -e "R y sus bibliotecas se han instalado correctamente en el sistema."
+    echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
+    echo -e "│      R y sus bibliotecas se han instalado correctamente en el sistema        │"
+    echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
+else
+    # Put the system up to date
+    sudo apt update
+    sudo apt install aptitude
+    sudo aptitude safe-upgrade --assume-yes
+    reset
+    echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
+    echo -e "│                               Sistema actualizado                            │"
+    echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
 fi
