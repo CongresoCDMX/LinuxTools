@@ -16,7 +16,7 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#   Version 0.1 - April 28, 2019
+#   Version 0.1 - August 28, 2019
 #   Author: Rodrigo Ernesto Alvarez Aguilera
 #
 #   Tested under Ubuntu 16.04.6 LTS using GNU bash version 4.3.48
