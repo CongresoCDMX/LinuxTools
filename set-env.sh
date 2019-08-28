@@ -42,16 +42,10 @@ elif  [[ $1 = "-R" ]]; then
     sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/'
     sudo apt-get update
     # Install R base with libraries and nmon to display local system statistics
-    sudo apt-get install --assume-yes r-base libssl-dev libcurl4-openssl-dev nmon
-    # Create work directory
-    mkdir ~/twitter
-    # Excecure Rscript with sudo to configure R repositories and install libraries
-    sudo Rscript configure.R
-    # Reset terminal and display final message
-    sleep 5
+    sudo apt-get install --assume-yes r-base libssl-dev libcurl4-openssl-dev
     reset
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
-    echo -e "│      R y sus bibliotecas se han instalado correctamente en el sistema        │"
+    echo -e "│       R y sus bibliotecas se han instalado correctamente en el sistema       │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
 else
     # Put the system up to date
