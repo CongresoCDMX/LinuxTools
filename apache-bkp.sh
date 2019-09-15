@@ -63,10 +63,8 @@ else
     reset
     # Listar archivos
     echo -e "┌──────────────────────────────────────────────────────────────────────────────┐"
-    echo -e "│        Respaldo de directorios y base de datos de WordPress finalizado       │"
+    echo -e "│             Respaldo de directorios y base de datos de finalizado            │"
     echo -e "└──────────────────────────────────────────────────────────────────────────────┘"
-    df -h |grep -e File -e archivos
-    echo -e " ────────────────────────────────────────────────────────────────────────────── "
     ls -hl $DATE-*.gz
     echo -e " ────────────────────────────────────────────────────────────────────────────── "
     cat md5.tmp
