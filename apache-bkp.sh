@@ -27,7 +27,7 @@ HELP="Uso: apache-bkp.sh [OPCIÓN]\n\n
 \t-l\tmuestra la licencia del programa\n
 \t-v\tmuestra la versión del programa\n"
 
-VERSION="apache-bkp.sh versión 0.2\n
+VERSION="apache-bkp.sh versión 0.1\n
 \bCopyright © 2019, Rodrigo Ernesto Alvarez Aguilera"
 
 DATE=`date +%Y%m%d`
