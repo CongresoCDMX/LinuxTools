@@ -56,7 +56,7 @@ else
     df -h
     sleep 5
     # Respaldar y comprimir directorio "html"
-    tar -czvf $DATE-$HOST-html.tar.gz /var/www/html/Comisión de Inclusión, Bienestar Social y Exigibilidad de Derechos Sociales
+    tar -czvf $DATE-$HOST-html.tar.gz /var/www/html/
     # Respaldar base de datos
     mysqldump -u $DBUSER -p$DBPASS $DATABASE > $DATABASE.sql
     # Comprimir respaldo de base de datos
