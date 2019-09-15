@@ -1,6 +1,6 @@
 # LinuxTools
 [![License](https://img.shields.io/github/license/CongresoCDMX/LinuxTools)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Release](https://img.shields.io/github/v/release/CongresoCDMX/LinuxTools?include_prereleases&sort=semver](https://github.com/CongresoCDMX/LinuxTools/releases)
+[![Release](https://img.shields.io/github/v/release/CongresoCDMX/LinuxTools?include_prereleases&sort=semver)](https://github.com/CongresoCDMX/LinuxTools/releases)
 
 CLI tools, scripts and binaries for GNU/Linux administration
 
