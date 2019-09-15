@@ -3,10 +3,13 @@ CLI tools, scripts and binaries for GNU/Linux administration
 
 ## Installation
 
-Use the package manager [apt](https://salsa.debian.org/apt-team/apt) to install [git](https://git-scm.com/).
+1. Use the package manager [apt](https://salsa.debian.org/apt-team/apt) to install [git](https://git-scm.com/).
 
 ```bash
 sudo apt install git
+```
+2. Clone this repository.
+```bash
 git clone git://github.com/CongresoCDMX/LinuxTools
 ```
 
@@ -16,4 +19,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![License](https://img.shields.io/github/license/CongresoCDMX/LinuxTools)](https://www.gnu.org/licenses/gpl-3.0.en.html)
